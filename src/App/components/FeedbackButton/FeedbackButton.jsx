@@ -1,14 +1,18 @@
-import React from 'react'
-  
-function FeedbackButton({feedbackChange}) {
-  
+import React from "react";
+import PropTypes from "prop-types";
+
+function FeedbackButton({ feedbackChange }) {
   return (
-    <div onClick={feedbackChange}> 
-      <button data-type='good'>Good</button>
-      <button data-type='neutral'>Neutral</button>
-      <button data-type='bad'>Bad</button>
+    <div onClick={feedbackChange}>
+      <button data-type="good">Good</button>
+      <button data-type="neutral">Neutral</button>
+      <button data-type="bad">Bad</button>
     </div>
-  )
+  );
 }
 
-export default FeedbackButton
+FeedbackButton.propTypes = {
+  feedbackCange: PropTypes.func,
+};
+
+export default FeedbackButton;

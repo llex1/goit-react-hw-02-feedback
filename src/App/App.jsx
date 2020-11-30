@@ -1,14 +1,14 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, Component } from "react";
 
 //jsx modules
-import FeedbackButton from './components/FeedbackButton';
-import FeedbackResults from './components/FeedbackResults';
+import FeedbackButton from "./components/FeedbackButton";
+import FeedbackResults from "./components/FeedbackResults";
 
 //states
-import feedbackState from './data/feedbackState';
+import feedbackState from "./data/feedbackState";
 
 //minimal css
-import styles from './main.module.css';
+import styles from "./main.module.css";
 
 class App extends Component {
   state = feedbackState;
@@ -17,11 +17,11 @@ class App extends Component {
     if (event.target.nodeName === "BUTTON") {
       this.setState((state) => {
         return {
-          [event.target.dataset.type]: ++state[event.target.dataset.type]
-        }
-      })
+          [event.target.dataset.type]: ++state[event.target.dataset.type],
+        };
+      });
     }
-  }
+  };
 
   render() {
     return (
@@ -30,8 +30,8 @@ class App extends Component {
         <FeedbackButton feedbackChange={this.feedbackChange} />
         <FeedbackResults data={this.state} />
       </Fragment>
-    )
+    );
   }
 }
 
-export default App
+export default App;
